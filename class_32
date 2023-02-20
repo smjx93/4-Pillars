@@ -1,0 +1,55 @@
+                                        // encapsulating our code here
+class Contractor {					    // no parenthesis () on classes
+	constructor(name, role){			// parameters match the this. stuff
+        this._name = name				// this keyword access the parameters
+        this._role = role               // underscore (_) provides abstraction
+    }
+
+    get name (){						
+	    return this._name
+	    }    
+    get role(){
+        return this._role   
+        }
+    sayHello () {
+        console.log(`Hello, my name is ${this._name} and I'm on the
+        ${this._role} team!`)
+    }   
+
+}
+
+
+class Front extends Contractor{         // the Front class will use super to inherit from the parent
+    constructor(name, role){
+        super(name, role)               //super inherits the values that are in the constructor
+        this._tech = tech
+    }
+
+    get tech(){
+        return this._tech
+    }
+    sayHello(){
+        `Hello, I'm ${this._name} and I work on the Front-end!`
+    }
+}
+
+class Back extends Contractor{         // the Front class will use super to inherit from the parent
+    constructor(name, role){
+        super(name, role)               //super inherits the values that are in the constructor
+        this._tech = tech
+    }
+
+    get tech(){
+        return this._tech
+    }
+    sayHello(){
+        `Hello, I'm ${this._name} and I work on the Back-end!`
+    }
+}
+
+
+// creating an object using the constructor
+let machi = new Front('The Machine','Front-end', 'React')
+let simba = new Back('Simba', 'Back-end', 'Node')
+
+
